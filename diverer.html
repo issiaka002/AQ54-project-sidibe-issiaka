@@ -17,12 +17,12 @@
 
 </head>
 
-<body>
+<body onload="initGraph()">
 
    <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
         <div class="side-header">
-            <h3>Air<span>Quality 45</span></h3>
+            <h3>Air<span>Quality 54</span></h3>
         </div>
         
         <div class="side-content">
@@ -37,12 +37,6 @@
                        <a href="index.html" class="active">
                             <span class="las la-home"></span>
                             <small>Dashboard</small>
-                        </a>
-                    </li>
-                    <li>
-                       <a href="index.html">
-                            <span class="las la-user-alt"></span>
-                            <small>En temps reel</small>
                         </a>
                     </li>
                     <li>
@@ -96,15 +90,15 @@
 
                 <div class="records ">
 
-                    <h2 style="margin: 10px;">Capteur SMART188 & SMART189</h2>
+                    <h2 style="margin: 10px;">Capteurs SMART188 & SMART189</h2>
                     <form id="dateForm" class="dateForm">
                       <label for="startDate">Date de début:</label>
-                      <input type="text" id="startDate" required>
+                      <input type="text" id="startDate" placeholder="Ex:2024-01-01" required>
                   
                       <label for="endDate">Date de fin:</label>
-                      <input type="text" id="endDate" required>
+                      <input type="text" id="endDate" placeholder="Ex:2024-01-02" required>
                   
-                      <button type="button" onclick="getDataBetween2Date()">Valider</button>
+                      <button id="loadButton" type="button" onclick="getDataBetween2Date()">Charger les données</button>
                     </form>
                   
                     <div id="plotlyChart"></div>

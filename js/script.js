@@ -66,14 +66,14 @@ function fetchDataSMART189() {
 }
 
 function myYRangeFunction(range) {
-  const min = -5; // valeur minimum sur la courbe
-  const max = 110; // valeur maximum sur la courbe
+  const min = -2; // valeur minimum sur la courbe
+  const max = 102.5; // valeur maximum sur la courbe
   return { min, max };
 }
 
 // Exécution de la fonction fetchDataSMART188() et fetchDataSMART189() chaque 2s 
-setInterval(fetchDataSMART188, 2000);
-setInterval(fetchDataSMART189, 2000);
+setInterval(fetchDataSMART188, 1000);
+setInterval(fetchDataSMART189, 1000);
 
 function createTimeline() {
   // creer deux graphes (SMART188, SMART189)
@@ -84,8 +84,8 @@ function createTimeline() {
     const seriesSMART188 = new TimeSeries();
     const seriesSMART189 = new TimeSeries();
 
-    chart1.addTimeSeries(seriesSMART188, { strokeStyle: option.color, fillToBottom: false, lineWidth: 2 });
-    chart2.addTimeSeries(seriesSMART189, { strokeStyle: option.color, fillToBottom: false, lineWidth: 2 });
+    chart1.addTimeSeries(seriesSMART188, { strokeStyle: option.color, fillToBottom: false, lineWidth: 1 });
+    chart2.addTimeSeries(seriesSMART189, { strokeStyle: option.color, fillToBottom: false, lineWidth: 1 });
 
     seriesMapSMART188[option.name] = seriesSMART188;
     seriesMapSMART189[option.name] = seriesSMART189;

@@ -20,6 +20,10 @@
     display: none;
 }
 
+#stationContainer{
+    display: flex;
+}
+
 .sidebar {
     position: fixed;
     height: 100%;
@@ -31,6 +35,61 @@
     background: var(--color-dark);
     transition: left 300ms;
 }
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.station {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+input::placeholder{
+    font-style: italic;
+    color: gray;
+}
+
+/* Style pour le bouton avec l'effet de chargement */
+#loadButton {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Style pour l'animation de chargement */
+#loadingSpinner {
+    display: none;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 .side-header {
     box-shadow: 0px 5px 5px -5px rgb(0 0 0 /10%);
