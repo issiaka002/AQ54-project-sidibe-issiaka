@@ -3,7 +3,7 @@
 
 :root {
     --main-color: #22BAA0;
-    --color-dark: #34425A;
+    --color-dark: #101010;
     --text-grey: #B0B0B0;
 }
 
@@ -404,6 +404,12 @@ main {
     margin-bottom: 10px;
   }
 
+.modal-btn{
+    cursor: pointer;
+    font-style: italic;
+    color: #777 !important;
+    text-decoration: none !important;
+}
 .legend-item {
     display: flex;
     align-items: center;
@@ -411,25 +417,51 @@ main {
 }
 
 .legend-color {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 7px;
     margin-right: 4px;
     border: none; 
-    border-radius: 50%; 
+    
 }
+.nb{
+    font-size: 15px;
+    font-style: italic;
+    color: gray;
 
+}
 .legend-text {
     font-size: 14px;
     font-weight: bold;
     margin-right: 15px;
 }
 
-.dateForm{
-    /* display: flex;
-    align-items: center;
-    justify-self: center;
-    margin: 0 auto; */
+/* Annulez ou remplacez les styles par défaut de Bootstrap pour h3 */
+body h3 {
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
+
+/* Annulez ou remplacez les styles par défaut de Bootstrap pour h4 */
+body h4 {
+font-size: 1em;
+margin-block-start: 1.33em;
+margin-block-end: 1.33em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+font-weight: bold;
+}
+body a,body a:hover{
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+  
 
 
 @media only screen and (max-width: 1200px) {

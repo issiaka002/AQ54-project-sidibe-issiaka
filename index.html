@@ -7,14 +7,17 @@
     <!-- style -->
     <link rel="stylesheet" href="styles/style.css">
 
-    <!-- barre horizontal (ligne) -->
+    <!-- (ligne) -->
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+     <!-- Stylesheet Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <title>AQ45 | temps reel</title>
+    
     <!-- librairie graphique smoothie.js-->
     <script src="js/smoothie.js" defer></script>
-    <script src="js/script.js" defer></script>
-    <script src="js/fetch.js" defer></script>
+    <script src="js/index.script.js" defer></script>
+    <script src="js/api-data-util.js" defer></script>
 
 </head>
 
@@ -23,7 +26,7 @@
    <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
         <div class="side-header">
-            <h3>Air<span>Quality 454</span></h3>
+            <h3>Air<span>Quality 54</span></h3>
         </div>
         
         <div class="side-content">
@@ -42,8 +45,14 @@
                     </li>
                     <li>
                         <a href="diverer.html">
-                             <span class="las la-user-alt"></span>
+                             <span class="las la-thermometer-half"></span>
                              <small>En diverer</small>
+                         </a>
+                     </li>
+                     <li>
+                        <a href="singleDay.html">
+                             <span class="las la-thermometer-half"></span>
+                             <small>Un seul jour</small>
                          </a>
                      </li>
                 </ul>
@@ -63,7 +72,7 @@
                     
                     <div class="notify-icon">
                         <span class="las la-bell"></span>
-                        <span class="notify">3</span>
+                        <span class="notify"></span>
                     </div>
                     
                 </div>
@@ -74,21 +83,25 @@
             
             <div class="page-header">
                 <h1>Dashboard</h1>
-                <small>Home / Dashboard</small>
+                <small>Home / Dashboard / Temps réel</small>
             </div>
             
             <div class="page-content">
             
                 <div class="analytics">
                     <div id="stationContainer"></div>
+                         
                 </div>
+                <a class="modal-btn" onclick="getMoreInfoFor2Station()">
+                    >> Plus d'information ...
+                </a>
 
 
                 <div class="records ">
 
-                    <h2 style="margin: 10px;">SMART188</h2>
+                    <h4 style="margin: 10px;">Station : SMART188</h4>
 
-                    <canvas id="chart1" width="1000" height="450"></canvas>
+                    <canvas id="chartSMART188" width="1050" height="450"></canvas>
                     <!-- Legendre SMART188-->
                     <div class="legend">
                         <div class="legend-item">
@@ -109,9 +122,9 @@
                         </div>
                     </div>
 
-                    <h2 style="margin: 10px;">SMART189</h2>
+                    <h4 style="margin: 10px;">Station : SMART189</h4>
 
-                    <canvas id="chart2" width="1000" height="450"></canvas>
+                    <canvas id="chartSMART189" width="1050" height="450"></canvas>
                      <!-- Legendre SMART189-->
                      <div class="legend">
                         <div class="legend-item">
@@ -132,6 +145,23 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel"><b> Données des stations </b></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- Contenu des données ici -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
             
             </div>
             
@@ -140,6 +170,13 @@
     </div>
     
    <script></script>
+  
+
+    <!-- Script Bootstrap (jQuery inclus) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     
   
 </body>

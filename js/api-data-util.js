@@ -1,11 +1,16 @@
-// Attend que le DOM soit chargé avant d'exécuter la fonction fetchData
-document.addEventListener("DOMContentLoaded", fetchData);
+// ##########################################
+// Air Quality 54 project
+// ##########################################
+
+// Attend que le DOM soit chargé avant d'exécuter la fonction getStationInfo
+document.addEventListener("DOMContentLoaded", getStationInfo);
 
 // Déclaration d'un tableau pour stocker les données des stations
 var donnee = [];
 
+
 // Fonction pour effectuer la requête HTTP et récupérer les données des stations
-function fetchData() {
+function getStationInfo() {
   // Effectuer la requête HTTP avec fetch
   fetch('https://airqino-api.magentalab.it/getStations/AQ54')
     .then(response => {
@@ -13,7 +18,6 @@ function fetchData() {
       if (!response.ok) {
         throw new Error(`Erreur HTTP! Statut: ${response.status}`);
       }
-      // Convertir la réponse JSON en objet JavaScript
       return response.json();
     })
     .then(data => {
@@ -27,6 +31,9 @@ function fetchData() {
       console.error('Erreur lors de la requête fetch:', error);
     });
 }
+
+
+
 
 // Fonction pour afficher les données des stations dans la page HTML
 function displayStations() {

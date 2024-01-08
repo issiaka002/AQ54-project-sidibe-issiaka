@@ -10,9 +10,9 @@
     <!-- barre horizontal (ligne) -->
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
-    <title>AQ45 | between 2 date</title>
-    <script src="js/plotly.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <title>AQ45 | single day</title>
+    <script src="js/plotly.js" defer></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" defer></script>
 
 
 </head>
@@ -79,30 +79,27 @@
         <main>
             
             <div class="page-header">
-                <h1>Donnée en differe</h1>
-                <small>Home / differe</small>
+                <h1>Donnée pour un jour</h1>
+                <small>Home / jour</small>
             </div>
             
             <div class="page-content">
 
-
                 <div class="records ">
 
-                    <h2 style="margin: 1px;">Stations : SMART188 & SMART189 </h2>
+                    <h2 style="margin: 1px;">Stations : SMART188 & SMART189  </h2>
                     <form id="dateForm" class="dateForm">
-                      <label for="stationName">Nom de la station:</label>
-                      <input type="text" id="stationName" placeholder="Ex: SMART188 ou SMART189" required>
+                        
+                        <label for="stationName">Nom de la station:</label>
+                        <input type="text" id="stationName" placeholder="Ex: SMART188 ou SMART189" required>
 
-                      <label for="startDate">Date de début:</label>
-                      <input type="text" id="startDate" placeholder="Ex: 2024-01-01" required>
+                        <label for="date">Date :</label>
+                        <input type="text" id="date" placeholder="Ex: 2024-01-01" required>
                   
-                      <label for="endDate">Date de fin:</label>
-                      <input type="text" id="endDate" placeholder="Ex: 2024-01-02" required>
-                  
-                      <button id="loadButton" type="button" onclick="getDataBetween2Date()">Charger les données</button>
+                      <button id="loadButton" type="button" onclick="getDataForSingleDay()">Charger les données</button>
                     </form>
                   
-                    <div id="plotlyChart"></div>
+                    <div id="chartsingleDay"></div>
                     
                 </div>
             
@@ -112,7 +109,8 @@
         
     </div>
     
-    <script src="js/diverer.script.js"></script>
+
+    <script src="js/singleDay.script.js"></script>
     
   
 </body>

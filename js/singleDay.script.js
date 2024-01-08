@@ -2,44 +2,34 @@
 // Air Quality 54 project
 // ##########################################
 
-var donnee = [];
+var data_tab = [];
 
-function validateDates() {
+
+function validateInputData() {
   
-  // Récupération des dates saisies par l'utilisateur
-  const startDate = document.getElementById("startDate").value;
-  const endDate = document.getElementById("endDate").value;
+  // Récupération les infos saisies par l'utilisateur
+  const date = document.getElementById("date").value;
   const stationName = document.getElementById("stationName").value;
 
   // Vérification des champs non vides
-  if (!startDate || !endDate || !stationName) {
-    alert("Veuillez saisir le nom de la station et les deux dates !!!");
-    return false;
-  }
-
-  // Conversion des dates en objets Date
-  const startDateObj = new Date(startDate);
-  const endDateObj = new Date(endDate);
-
-  // Vérification que startDate est antérieur à endDate
-  if (startDateObj >= endDateObj) {
-    alert("La date de début doit être antérieure à la date de fin.");
+  if (!date || !stationName) {
+    alert("Veuillez saisir la date & le nom de la station.");
     return false;
   }
   return true;
-
 }
 
-function getDataBetween2Date() {
+
+
+function getDataForSingleDay() {
 
   // Validation des données
-  if (!validateDates()) {
+  if (!validateInputData()) {
     return;
   }
 
-  // Récupération des données saisies par l'utilisateur
-  const startDate = document.getElementById("startDate").value;
-  const endDate = document.getElementById("endDate").value;
+  // Récupération les infos saisies par l'utilisateur
+  const date = document.getElementById("date").value;
   const stationName = document.getElementById("stationName").value;
 
   // Modifier l'apparence du bouton au clic
@@ -47,12 +37,16 @@ function getDataBetween2Date() {
   loadButton.innerHTML = 'Chargement...';
   loadButton.disabled = true;
 
-  const apiUrl = `https://airqino-api.magentalab.it/getRange/${stationName}/${startDate}/${endDate}`;
+  const apiUrl = `https://airqino-api.magentalab.it/getSingleDay/${stationName}/${date}`;
 
-  fetch(apiUrl)
+  fetchData(apiUrl);
+}
+
+function fetchData(url){
+    fetch(url)
     .then(response => response.json())
     .then(data => {
-      donnee = data.raw_data;
+      data_tab = data.raw_data;
 
       // Appeler la fonction pour rafraichir le graphique
       createPlotForDisplayData();
@@ -74,12 +68,11 @@ function getDataBetween2Date() {
 
 function createPlotForDisplayData() {
   //
-  const traces = Object.keys(donnee[0]).map(key => {
+  const traces = Object.keys(data_tab[0]).map(key => {
     return {
-      x: donnee.map(entry => entry.utc_timestamp),
-      y: donnee.map(entry => entry[key]),
+      x: data_tab.map(entry => entry.utc_timestamp),
+      y: data_tab.map(entry => entry[key]),
       type: 'line',
-     
       name: key
     };
   });
@@ -95,14 +88,14 @@ function createPlotForDisplayData() {
     }
   };
 
-  Plotly.newPlot('plotlyChart', traces, layout);
+  Plotly.newPlot('chartsingleDay', traces, layout);
 }
 
 // Fonction d'initialisation du graphique
 function initGraph() {
   var data = [{
       x: [1, 2, 3, 4, 5],
-      y: [10, 11, 12, 13, 14],
+      y: [5, 10, 5, 8, 18],
       type: 'line'
   }];
 
@@ -117,8 +110,8 @@ function initGraph() {
       }
   };
 
-  // Créez le graphique dans la div avec l'ID "plotlyChart"
-  Plotly.newPlot('plotlyChart', data, layout);
+  // Créez le graphique dans la div avec l'ID "chartsingleDay"
+  Plotly.newPlot('chartsingleDay', data, layout);
 }
 
 
