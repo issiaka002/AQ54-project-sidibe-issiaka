@@ -9,26 +9,29 @@ Nous disposons donc de deux capteurs Airqino déployés  en zone urbaine dans le
 
 ## Fonctionnalites principales
 
-- Visualisation de donnee en temps reel (Capteurs: SMART188 & SMART189)
-- Visualisation de donnee en differe (Capteurs: SMART188 & SMART189)
-- Visualisation de donnee pour un jour en particulier (Capteurs: SMART188 & SMART189)
+- Visualisation de donnée en temps réel (Capteurs: SMART188 & SMART189)
+- Visualisation de donnée en differe (Capteurs: SMART188 & SMART189)
+- Visualisation de donnée pour un jour en particulier (Capteurs: SMART188 & SMART189)
 - Information sur les capteurs: SMART188 & SMART189
 
 
-## Architecture
-
-![Pipeline Architecture](https://imgur.com/1DBe05W.png)
-
 ## Quelques captures d'ecran
 
-![Pipeline Architecture](https://imgur.com/1DBe05W.png)
+![Dashbaord & visualisation temps réel](docs/acceuil.png)
 
-![Pipeline Architecture](https://imgur.com/1DBe05W.png)
+![Dashbaord & detail capteur](docs/detail.png)
 
-## execution
+![Visualisation en differe ](docs/differe.png)
+
+![Visualisation un jour](docs/unJour.png)
+
+
+
+## Execution
 
 - le lien du site hebergé : https://issiaka002.github.io/AQ54-project-sidibe-issiaka/
-- une seule commande : docker run --name myapp -ti -p 8088:80 -d issiaka99/aq54:latest
+- une seule commande : 
+    + docker run --name myapp -ti -p 8088:80 -d issiaka99/aq54:latest
 - un docker-compose.yml:
 ```bash
     version: '3'
@@ -56,10 +59,11 @@ Machine Locale:
 
 ## Perspective futures
 
-On peut considerer ses perspective futures:
+On peut considerer ses perspective futures suivantes :
+
 - Implementer un system d alert en temps real pour notifier les utilisateur
 - Analyse & machine learning
 
 ## Conclusion
 
-Ce projet montre l'utilisation de javascript vanilla pour mettre en place une plateforme de visualisation de donnee en temps reel et en differe
+Ce projet montre l'utilisation de javascript vanilla pour mettre en place une plateforme de visualisation de donnée en temps réel et en differe
