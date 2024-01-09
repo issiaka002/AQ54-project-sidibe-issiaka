@@ -2,6 +2,6 @@ version: '3'
 
 services:
   myWebApp:
-    image: nom_utilisateur/airquality:v1.0.
+    image: issiaka99/aq54:latest
     ports:
-      - "8080:80"
+      - "8081:80"
