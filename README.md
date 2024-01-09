@@ -52,18 +52,18 @@ Machine Locale:
   16 GiB RAM, 500 GiB Storage SSD
 ```
 
-### prerequis
+### Prérequis
 
 - Docker (optional)
 - un navigateur web 
 
 ## Perspective futures
 
-On peut considerer ses perspective futures suivantes :
+On peut considerer ces perspectives futures suivantes :
 
-- Implementer un system d alert en temps real pour notifier les utilisateur
-- Analyse & machine learning
+- Implementer un systeme d'alert en temps réel pour notifier les utilisateurs des changements
+- Analyser & faire du machine learning
 
 ## Conclusion
 
-Ce projet montre l'utilisation de javascript vanilla pour mettre en place une plateforme de visualisation de donnée en temps réel et en differe
+Ce projet montre l'utilisation de javascript vanilla pour mettre en place une plateforme de visualisation de donnée en temps réel et en differe.
